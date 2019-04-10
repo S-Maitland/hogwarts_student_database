@@ -40,17 +40,16 @@ attr_accessor :first_name, :second_name, :house_id, :age
     return Student.new(result)
   end
 
-  # def find_house()
-  #   sql = 'SELECT * FROM houses INNER JOIN students ON house_id = houses.id WHERE houses.id = $1'
-  #   values = [id]
-  #   return SqlRunner.run(sql, values)[0]
-  # end
-
   def house()
     sql = ' SELECT * FROM houses WHERE id = $1'
     values = [@house_id]
     result = SqlRunner.run(sql, values)[0]
     return House.new(result)
+  end
+
+  def self.delete_all()
+    sql = 'DELETE FROM students'
+    SqlRunner.run(sql)
   end
 
 end

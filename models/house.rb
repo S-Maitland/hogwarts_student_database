@@ -34,4 +34,10 @@ attr_accessor :house_name, :logo
     result = SqlRunner.run(sql, values)[0]
     return House.new(result)
   end
+
+  def self.delete_all()
+    sql = 'DELETE FROM houses'
+    SqlRunner.run(sql)
+  end
+
 end

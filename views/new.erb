@@ -1,10 +1,11 @@
 <form action="/students" method="post">
   <label for="students-houses">Select A House:</label>
-  <select name="houses" id="houses">
+
+  <select name="house_id" id="houses">
     <option selected="selected" selection disabled>Select A House</option>
-    <option value="Gryffindor">Gryffindor</option>
-    <option value="Slytherin">Slytherin</option>
-    <option value="Hufflepuff">Hufflepuff</option>
-    <option value="Ravenclaw">Ravenclaw</option>
+    <%  @houses.each do |house| %>
+    <option value="<%= house.id %>"><%= house.house_name %></option>
+  <% end  %>
   </select>
+
 </form>

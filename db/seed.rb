@@ -2,6 +2,8 @@ require('pry')
 require_relative('../models/student.rb')
 require_relative('../models/house.rb')
 
+House.delete_all()
+Student.delete_all()
 
 house1 = House.new({
   'house_name' => 'Gyrffindor',
